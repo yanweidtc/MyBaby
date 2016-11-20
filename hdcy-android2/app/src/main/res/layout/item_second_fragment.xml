@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@color/transparent_black_60">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/iv_video_background"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@mipmap/ic_launcher"
+        android:scaleType="fitXY"
+        android:alpha="0.7"
+        />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@color/transparent_black_50"
+            android:scaleType="fitXY"
+            android:id="@+id/imageView" />
+        </FrameLayout>
+    <TextView
+        android:id="@+id/tv_video_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:textSize="18sp"
+        android:text="直播"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/tv_video_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:foregroundGravity="center"
+        android:layout_centerHorizontal="true"
+        android:maxEms="10"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:layout_marginTop="95dp"
+        android:layout_below="@+id/tv_activity_title"
+        android:textSize="14sp"
+        android:text="desc"
+        android:textColor="#FFFFFF"/>
+
+</RelativeLayout>

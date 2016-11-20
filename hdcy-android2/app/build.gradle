@@ -1,0 +1,100 @@
+
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+    defaultConfig {
+        applicationId "com.hdcy.app"
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    lintOptions{
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    sourceSets{
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    signingConfigs{
+        debug{
+            storeFile file('..//KeyStore//hdcy.jks')
+            storePassword 'Andylau123'
+            keyAlias 'hdcy'
+            keyPassword 'Andylau123'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile project(':fragmentation')
+    compile project(':banners')
+    compile project(':ulive-android-sdk')
+    compile project(':RefreshLayout')
+    compile project(':multi-image-selector')
+    compile project(':LUBAN')
+    compile 'fm.jiecao:jiecaovideoplayer:4.6.3'
+    compile 'com.google.android.gms:play-services-appindexing:8.4.0'
+    //轮播图
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.android.support:support-v4:23.3.0'
+    compile 'com.nineoldandroids:library:2.4.0'
+    //加入支持分包的依赖库
+    compile 'com.android.support:multidex:1.0.1'
+    //xutils
+    compile 'org.xutils:xutils:3.3.36'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.alibaba:fastjson:1.2.14'
+    compile 'com.zhy:autolayout:1.4.3'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'com.android.support:design:23.3.0'
+    compile 'com.android.support:cardview-v7:23.3.0'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile project(':base-adapter-library')
+    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.makeramen:roundedimageview:2.2.1'
+    //compile 'com.jakewharton:butterknife:8.2.1'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'it.sephiroth.android.library.horizontallistview:hlistview:1.3.1'
+    //展开收起控件
+    compile 'com.ms-square:expandableTextView:0.1.4'
+    testCompile 'junit:junit:4.12'
+    compile files('libs/SocialSDK_WeiXin_2.jar')
+    compile files('libs/SocialSDK_umengwx.jar')
+    compile files('libs/umeng_social_apiv6.0.0.jar')
+    compile files('libs/umeng_social_netv6.0.0.jar')
+    compile files('libs/umeng_social_viewv6.0.0.jar')
+    compile files('libs/jsoup-1.7.2.jar')
+    //时间选择器
+    compile 'com.jzxiang.pickerview:TimePickerDialog:1.0.1'
+    compile 'pub.devrel:easypermissions:0.1.9'
+    compile files('libs/Rong_IMKit_v2_6_4.jar')
+    //城市选择
+    compile 'me.yokeyword:indexablerecyclerview:1.0.5'
+    compile files('libs/BaiduLBS_Android.jar')
+    //倒计时
+    compile 'com.github.iwgang:countdownview:2.1.2'
+
+/*    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.6'
+
+    compile 'top.zibin:Luban:1.0.9'*/
+
+
+}
